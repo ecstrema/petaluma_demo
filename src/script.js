@@ -65,27 +65,27 @@
 				<h2 class="gfp-message cdel"></h2>
 				<hr>
 				<div id="gfp-font-data">
-					<div class="gfp-collapsed">Font Header table <a href="https://www.microsoft.com/typography/OTSPEC/head.htm" target="_blank">head</a></div>
-					<dl id="gfp-head-table"><dt>Undefined</dt></dl>
-					<div class="gfp-collapsed">Horizontal Header table <a href="https://www.microsoft.com/typography/OTSPEC/hhea.htm" target="_blank">hhea</a></div>
-					<dl id="gfp-hhea-table"><dt>Undefined</dt></dl>
-					<div class="gfp-collapsed">Maximum Profile table <a href="https://www.microsoft.com/typography/OTSPEC/maxp.htm" target="_blank">maxp</a></div>
-					<dl id="gfp-maxp-table"><dt>Undefined</dt></dl>
-					<div class="gfp-collapsed">Naming table <a href="https://www.microsoft.com/typography/OTSPEC/name.htm" target="_blank">name</a></div>
-					<dl id="gfp-name-table"><dt>Undefined</dt></dl>
-					<div class="gfp-collapsed">OS/2 and Windows Metrics table <a href="https://www.microsoft.com/typography/OTSPEC/os2.htm" target="_blank">OS/2</a></div>
-					<dl id="gfp-os2-table"><dt>Undefined</dt></dl>
-					<div class="gfp-collapsed">PostScript table <a href="https://www.microsoft.com/typography/OTSPEC/post.htm" target="_blank">post</a></div>
-					<dl id="gfp-post-table"><dt>Undefined</dt></dl>
-					<div class="gfp-collapsed">Character To Glyph Index Mapping Table <a href="https://www.microsoft.com/typography/OTSPEC/cmap.htm" target="_blank">cmap</a></div>
-					<dl id="gfp-cmap-table"><dt>Undefined</dt></dl>
-					<div class="gfp-collapsed">Font Variations table <a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6fvar.html" target="_blank">fvar</a></div>
-					<dl id="gfp-fvar-table"><dt>Undefined</dt></dl>
+					<div class="gfp-collapsed">Table d'en-tête de la police <a href="https://www.microsoft.com/typography/OTSPEC/head.htm" target="_blank">head</a></div>
+					<dl id="gfp-head-table"><dt>Non-défini</dt></dl>
+					<div class="gfp-collapsed">Table d'en-tête horizontale<a href="https://www.microsoft.com/typography/OTSPEC/hhea.htm" target="_blank">hhea</a></div>
+					<dl id="gfp-hhea-table"><dt>Non-défini</dt></dl>
+					<div class="gfp-collapsed">Table de profile maximum<a href="https://www.microsoft.com/typography/OTSPEC/maxp.htm" target="_blank">maxp</a></div>
+					<dl id="gfp-maxp-table"><dt>Non-défini</dt></dl>
+					<div class="gfp-collapsed">Table de noms<a href="https://www.microsoft.com/typography/OTSPEC/name.htm" target="_blank">name</a></div>
+					<dl id="gfp-name-table"><dt>Non-défini</dt></dl>
+					<div class="gfp-collapsed">Table de données métriques OS/2 et Windows<a href="https://www.microsoft.com/typography/OTSPEC/os2.htm" target="_blank">OS/2</a></div>
+					<dl id="gfp-os2-table"><dt>Non-défini</dt></dl>
+					<div class="gfp-collapsed">Table PostScript<a href="https://www.microsoft.com/typography/OTSPEC/post.htm" target="_blank">post</a></div>
+					<dl id="gfp-post-table"><dt>Non-défini</dt></dl>
+					<div class="gfp-collapsed">Table charactère->index<a href="https://www.microsoft.com/typography/OTSPEC/cmap.htm" target="_blank">cmap</a></div>
+					<dl id="gfp-cmap-table"><dt>Non-défini</dt></dl>
+					<div class="gfp-collapsed">Table de variance<a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6fvar.html" target="_blank">fvar</a></div>
+					<dl id="gfp-fvar-table"><dt>Non-défini</dt></dl>
 				</div>
 				<hr>
 				<div>
-					<div>Show unicode: <input class="gfp-show-unicode" type="checkbox"${showUnicode ? " checked" : ""}></div>
-					Glyphs <span id="gfp-pagination"></span>
+					<div>Format unicode: <input class="gfp-show-unicode" type="checkbox"${showUnicode ? " checked" : ""}></div>
+					Charactères <span id="gfp-pagination"></span>
 					<br>
 					<div id="gfp-glyph-list-end"></div>
 				</div>
@@ -291,37 +291,37 @@
 		}
 		glyph = font.glyphs.get(glyphIndex);
 		html = `<dl>
-			<dt>Show points</dt>
+			<dt>Montrer les points bezier</dt>
 			<dd><input class="gfp-show-points" type="checkbox"${showPoints ? ' checked' : ''}></dd>
-			<dt>Show min and max</dt>
+			<dt>Montrer les extremums</dt>
 			<dd><input class="gfp-show-min-max" type="checkbox"${showMinMax ? ' checked' : ''}></dd>
-			<dt>Show arrows</dt>
+			<dt>Montrer les flèches directionnelles</dt>
 			<dd><input class="gfp-show-arrows" type="checkbox"${showArrows ? ' checked' : ''}></dd>
-			<dt>name</dt><dd>${glyph.name}</dd>`;
+			<dt>Nom</dt><dd>${glyph.name}</dd>`;
 
 		if (glyph.unicode) {
-			html += '<dt>unicode</dt><dd>' + glyph.unicodes.map(formatUnicode).join(', ') + '</dd>';
+			html += '<dt>Valeur Unicode</dt><dd>' + glyph.unicodes.map(formatUnicode).join(', ') + '</dd>';
 		}
 		html += addItem('index') +
-			addItem('xMin') +
-			addItem('xMax') +
-			addItem('yMin') +
-			addItem('yMax') +
-			addItem('advanceWidth') +
-			addItem('leftSideBearing') +
+			addItem('X Minimum') +
+			addItem('X Maximum') +
+			addItem('Y minimum') +
+			addItem('Y Maximum') +
+			addItem('Avance') +
+			addItem('Échappée gauche') +
 			'</dl>';
 
 		if (glyph.numberOfContours > 0) {
 			contours = glyph.getContours();
 			html += 'contours:<br>' + contours.map(contourToString).join('\n');
 		} else if (glyph.isComposite) {
-			html += '<br>This composite glyph is a combination of :<ul><li>' +
+			html += '<br>Ce caractère composé est composé de <ul><li>' +
 				glyph.components.map(component => {
-					return 'glyph ' + component.glyphIndex + ' at dx=' + component.dx +
+					return 'caractère ' + component.glyphIndex + ' à dx=' + component.dx +
 						', dy=' + component.dy;
 				}).join('</li><li>') + '</li></ul>';
 		} else if (glyph.path) {
-			html += 'path:<br><pre class="gfp-path">  ' +
+			html += 'Chemin de traçage:<br><pre class="gfp-path">  ' +
 				glyph.path.commands.map(pathCommandToString).join('\n  ') + '\n</pre>';
 		}
 		container.innerHTML = html;
