@@ -67,19 +67,19 @@
 				<div id="gfp-font-data">
 					<div class="gfp-collapsed">Table d'en-tête de la police <a href="https://www.microsoft.com/typography/OTSPEC/head.htm" target="_blank">head</a></div>
 					<dl id="gfp-head-table"><dt>Non-défini</dt></dl>
-					<div class="gfp-collapsed">Table d'en-tête horizontale<a href="https://www.microsoft.com/typography/OTSPEC/hhea.htm" target="_blank">hhea</a></div>
+					<div class="gfp-collapsed">Table d'en-tête horizontale <a href="https://www.microsoft.com/typography/OTSPEC/hhea.htm" target="_blank">hhea</a></div>
 					<dl id="gfp-hhea-table"><dt>Non-défini</dt></dl>
-					<div class="gfp-collapsed">Table de profile maximum<a href="https://www.microsoft.com/typography/OTSPEC/maxp.htm" target="_blank">maxp</a></div>
+					<div class="gfp-collapsed">Table de profile maximum <a href="https://www.microsoft.com/typography/OTSPEC/maxp.htm" target="_blank">maxp</a></div>
 					<dl id="gfp-maxp-table"><dt>Non-défini</dt></dl>
-					<div class="gfp-collapsed">Table de noms<a href="https://www.microsoft.com/typography/OTSPEC/name.htm" target="_blank">name</a></div>
+					<div class="gfp-collapsed">Table de noms <a href="https://www.microsoft.com/typography/OTSPEC/name.htm" target="_blank">name</a></div>
 					<dl id="gfp-name-table"><dt>Non-défini</dt></dl>
-					<div class="gfp-collapsed">Table de données métriques OS/2 et Windows<a href="https://www.microsoft.com/typography/OTSPEC/os2.htm" target="_blank">OS/2</a></div>
+					<div class="gfp-collapsed">Table de données métriques OS/2 et Windows <a href="https://www.microsoft.com/typography/OTSPEC/os2.htm" target="_blank">OS/2</a></div>
 					<dl id="gfp-os2-table"><dt>Non-défini</dt></dl>
-					<div class="gfp-collapsed">Table PostScript<a href="https://www.microsoft.com/typography/OTSPEC/post.htm" target="_blank">post</a></div>
+					<div class="gfp-collapsed">Table PostScript <a href="https://www.microsoft.com/typography/OTSPEC/post.htm" target="_blank">post</a></div>
 					<dl id="gfp-post-table"><dt>Non-défini</dt></dl>
-					<div class="gfp-collapsed">Table charactère->index<a href="https://www.microsoft.com/typography/OTSPEC/cmap.htm" target="_blank">cmap</a></div>
+					<div class="gfp-collapsed">Table de conversion charactère-index <a href="https://www.microsoft.com/typography/OTSPEC/cmap.htm" target="_blank">cmap</a></div>
 					<dl id="gfp-cmap-table"><dt>Non-défini</dt></dl>
-					<div class="gfp-collapsed">Table de variance<a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6fvar.html" target="_blank">fvar</a></div>
+					<div class="gfp-collapsed">Table de variance <a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6fvar.html" target="_blank">fvar</a></div>
 					<dl id="gfp-fvar-table"><dt>Non-défini</dt></dl>
 				</div>
 				<hr>
@@ -97,7 +97,6 @@
 					<div id="gfp-glyph-data"></div>
 					<div style="clear: both"></div>
 				</div>
-				<span style="font-size:0.8em">Powered by <a href="https://github.com/nodebox/opentype.js">opentype.js</a></span>
 			</div>
 		`;
 		prepareGlyphList();
