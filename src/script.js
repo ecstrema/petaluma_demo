@@ -215,12 +215,12 @@
 
 	/* Code copied from http://opentype.js.org/glyph-inspector.html */
 	const cellCount = 100,
-		cellWidth = 62,
-		cellHeight = 60,
+		cellWidth = 100,
+		cellHeight = 100,
 		cellMarginTop = 1,
-		cellMarginBottom = 8,
+		cellMarginBottom = 1,
 		cellMarginLeftRight = 1,
-		glyphMargin = 5,
+		glyphMargin = 1,
 		pixelRatio = window.devicePixelRatio || 1,
 		arrowLength = 10,
 		arrowAperture = 4;
