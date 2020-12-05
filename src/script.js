@@ -291,11 +291,11 @@
 		}
 		glyph = font.glyphs.get(glyphIndex);
 		html = `<dl>
-			<dt>Montrer les points bezier</dt>
+			<dt>Points bezier</dt>
 			<dd><input class="gfp-show-points" type="checkbox"${showPoints ? ' checked' : ''}></dd>
-			<dt>Montrer les extremums</dt>
+			<dt>Extremums</dt>
 			<dd><input class="gfp-show-min-max" type="checkbox"${showMinMax ? ' checked' : ''}></dd>
-			<dt>Montrer les flèches directionnelles</dt>
+			<dt>Flèches directionnelles</dt>
 			<dd><input class="gfp-show-arrows" type="checkbox"${showArrows ? ' checked' : ''}></dd>
 			<dt>Nom</dt><dd>${glyph.name}</dd>`;
 
