@@ -15,8 +15,8 @@
 
 	let font;
 	let showUnicode = false;
-	let showPoints = true;
-	let showArrows = true;
+	let showPoints = false;
+	let showArrows = false;
 	let currentIndex = 0;
 
 	// canvas colors
@@ -27,32 +27,33 @@
 	const glyphRulerColor = "#a0a0a0"; // (mini) min & max width marker & (big) glyph horizontal lines
 
 	function getFont() {
-		// add loading indicator
-		let request = new XMLHttpRequest();
-		request.open("GET", "src/PetalumaText.otf");
-		request.responseType = "arraybuffer";
-		request.onload = setupFont;
-		request.send();
-	}
-
-	function setupFont(data) {
-		const block = $(".ghfp-body");
+		const block = document.getElementById("ghfp-body");
 		const el = $(".final-path");
-		if (block && el) {
-			try {
-				font = opentype.parse(data);
-				addHTML(block, el);
-				showErrorMessage("");
-				onFontLoaded(font);
-			} catch (err) {
+
+		opentype.load('src/PetalumaText.otf', function(err, f) {
+			if (err) {
 				block.innerHTML = "<h2 class='gfp-message cdel'></h2>";
 				showErrorMessage(err.toString());
 				if (err.stack) {
 					console.error(err.stack);
 				}
 				throw (err);
+			} else {
+				font = f;
+				console.log("loading font")
+				addHTML(block, el);
+				showErrorMessage("");
+				onFontLoaded(font);
 			}
-		}
+		});
+
+		// add loading indicator
+		console.log("request sent");
+		// let request = new XMLHttpRequest();
+		// request.open("GET", "https://github.com/steinbergmedia/petaluma/blob/master/redist/otf/PetalumaText.otf?raw=true");
+		// request.responseType = "arraybuffer";
+		// request.onload = setupFont;
+		// request.send();
 	}
 
 	function addHTML(block, el) {
