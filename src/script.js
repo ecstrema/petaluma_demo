@@ -30,7 +30,7 @@
 		const block = document.getElementById("ghfp-body");
 		const el = $(".final-path");
 
-		opentype.load('src/PetalumaText.otf', function(err, f) {
+		opentype.load('src/Petaluma.otf', function(err, f) {
 			if (err) {
 				block.innerHTML = "<h2 class='gfp-message cdel'></h2>";
 				showErrorMessage(err.toString());
@@ -63,7 +63,7 @@
 				<span class="gfp-info" id="gfp-font-name">${name}</span>
 				<h2 class="gfp-message cdel"></h2>
 				<hr>
-				<div id="gfp-font-data" class="gfp-collapsed">
+				<div id="gfp-font-data">
 					<div class="gfp-collapsed">Font Header table <a href="https://www.microsoft.com/typography/OTSPEC/head.htm" target="_blank">head</a></div>
 					<dl id="gfp-head-table"><dt>Undefined</dt></dl>
 					<div class="gfp-collapsed">Horizontal Header table <a href="https://www.microsoft.com/typography/OTSPEC/hhea.htm" target="_blank">hhea</a></div>
@@ -214,7 +214,7 @@
 	}
 
 	/* Code copied from http://opentype.js.org/glyph-inspector.html */
-	const cellCount = 100,
+	const cellCount = 40,
 		cellWidth = 100,
 		cellHeight = 100,
 		cellMarginTop = 1,
