@@ -63,7 +63,7 @@
 				<span class="gfp-info" id="gfp-font-name">${name}</span>
 				<h2 class="gfp-message cdel"></h2>
 				<hr>
-				<div id="gfp-font-data">
+				<div id="gfp-font-data" class="gfp-collapsed">
 					<div class="gfp-collapsed">Font Header table <a href="https://www.microsoft.com/typography/OTSPEC/head.htm" target="_blank">head</a></div>
 					<dl id="gfp-head-table"><dt>Undefined</dt></dl>
 					<div class="gfp-collapsed">Horizontal Header table <a href="https://www.microsoft.com/typography/OTSPEC/hhea.htm" target="_blank">hhea</a></div>
