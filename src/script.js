@@ -16,6 +16,7 @@
 	let font;
 	let showUnicode = false;
 	let showPoints = false;
+	let showMinMax = false;
 	let showArrows = false;
 	let currentIndex = 0;
 
@@ -121,6 +122,7 @@
 		$("#gfp-glyph-data").addEventListener("change", function() {
 			showPoints = $(".gfp-show-points", this).checked;
 			showArrows = $(".gfp-show-arrows", this).checked;
+			showMinMax = $(".gfp-show-min-max", this).checked;
 			cellSelect();
 			return false;
 		}, false);
@@ -291,6 +293,8 @@
 		html = `<dl>
 			<dt>Show points</dt>
 			<dd><input class="gfp-show-points" type="checkbox"${showPoints ? ' checked' : ''}></dd>
+			<dt>Show min and max</dt>
+			<dd><input class="gfp-show-min-max" type="checkbox"${showMinMax ? ' checked' : ''}></dd>
 			<dt>Show arrows</dt>
 			<dd><input class="gfp-show-arrows" type="checkbox"${showArrows ? ' checked' : ''}></dd>
 			<dt>name</dt><dd>${glyph.name}</dd>`;
@@ -412,13 +416,15 @@
 		markSize = 10;
 
 		ctx.fillStyle = bigGlyphMarkerColor;
-		ctx.fillRect(xmin - markSize + 1, glyphBaseline, markSize, 1);
-		ctx.fillRect(xmin, glyphBaseline, 1, markSize);
-		ctx.fillRect(xmax, glyphBaseline, markSize, 1);
-		ctx.fillRect(xmax, glyphBaseline, 1, markSize);
-		ctx.textAlign = 'center';
-		ctx.fillText('0', xmin, glyphBaseline + markSize + 10);
-		ctx.fillText(glyph.advanceWidth, xmax, glyphBaseline + markSize + 10);
+		if (showMinMax) {
+			ctx.fillRect(xmin - markSize + 1, glyphBaseline, markSize, 1);
+			ctx.fillRect(xmin, glyphBaseline, 1, markSize);
+			ctx.fillRect(xmax, glyphBaseline, markSize, 1);
+			ctx.fillRect(xmax, glyphBaseline, 1, markSize);
+			ctx.textAlign = 'center';
+			ctx.fillText('0', xmin, glyphBaseline + markSize + 10);
+			ctx.fillText(glyph.advanceWidth, xmax, glyphBaseline + markSize + 10);
+		}
 
 		ctx.fillStyle = bigGlyphStrokeColor;
 		path = glyph.getPath(x0, glyphBaseline, glyphSize);
